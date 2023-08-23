@@ -8,11 +8,13 @@
 import sys
 import subprocess
 from PyQt5 import QtCore
-from PyQt5.QtCore import QCoreApplication, QProcess
+from PyQt5.QtCore import *
 from PyQt5.QtWidgets import QApplication, QMainWindow, QSizePolicy, QPlainTextEdit, QCheckBox
 from PyQt5.uic import loadUi
 from PyQt5 import QtGui
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import *
+import os
+import sys
 
 
 
@@ -22,7 +24,7 @@ from PyQt5.QtGui import QIcon
 class MainUI(QMainWindow):
     def __init__(self):
         super(MainUI, self).__init__()
-        loadUi("/usr/share/artemisos-welcome-app/welcome.ui", self)
+        loadUi("welcome.ui", self)
         width = 640
         height = 480
         self.setFixedSize(width, height)
@@ -54,14 +56,17 @@ class MainUI(QMainWindow):
         self.output.appendPlainText(s)
 
     def updatesys(self):
+        self.p.start("kitty", ["update"])
         self.message("Updating system, Please wait...")
         self.p.finished.connect(self.process_finished)  # Clean up once complete.
-        self.p.start("kitty", ["update"])
+
 
     def gpgfix(self):
-        self.message("Fixing GPG key.")
-        self.p.finished.connect(self.process_finished)  # Clean up once complete.
         self.p.start("kitty", ["gpgfix"])
+        self.p.finished.connect(self.process_finished)  # Clean up once complete.
+        self.message("Updating GPG")
+
+
 
     def process_finished(self):
         self.message("Process finished.")
@@ -74,9 +79,9 @@ class MainUI(QMainWindow):
     def clickBox(self, state):
 
         if state == QtCore.Qt.Checked:
-         self.p.start("kitty", ['./autostart_enable'])
+         self.p.start("bash", ['./autostart_enable'])
         else:
-         self.p.start("kitty", ['./autostart_disable'])
+         self.p.start("bash", ['./autostart_disable'])
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
