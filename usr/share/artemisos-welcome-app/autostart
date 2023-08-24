@@ -9,11 +9,11 @@ FILE=~/.config/autostart/artemisos-welcome-app.desktop
 
 if test -f "$FILE"; then
     rm $FILE
-    python3 /usr/share/artemisos-welcome-app/disable.py
+    python3 disable.py
 
 else
     cp  /usr/share/applications/artemisos-welcome-app.desktop ~/.config/autostart/
-    python3 /usr/share/artemisos-welcome-app/enable.py
+    python3 enable.py
 
 fi
 
