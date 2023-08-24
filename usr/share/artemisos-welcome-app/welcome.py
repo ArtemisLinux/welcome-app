@@ -85,6 +85,7 @@ class MainUI(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
+    app.setDesktopFileName("artemisos-welcome-app")    #
     ui = MainUI()
     ui.show()
     app.exec_()
