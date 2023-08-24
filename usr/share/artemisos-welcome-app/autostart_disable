@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-FILE=enabled
-if test -f "$FILE"; then
-    rm $FILE
-fi

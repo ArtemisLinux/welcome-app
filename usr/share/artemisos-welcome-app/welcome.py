@@ -39,7 +39,7 @@ class MainUI(QMainWindow):
         self.update.clicked.connect(self.updatesys)
         self.pacfix.clicked.connect(self.gpgfix)
         self.clearbox.clicked.connect(self.clearmsgbox)
-        self.autostart.stateChanged.connect(self.clickBox)
+        self.autostart.clicked.connect(self.autostartconfig)
 
 
 
@@ -75,13 +75,10 @@ class MainUI(QMainWindow):
     def clearmsgbox(self):
         self.output.clear() 
 
+    def autostartconfig(self):
+        self.p.start("bash", ["./autostart"])
 
-    def clickBox(self, state):
 
-        if state == QtCore.Qt.Checked:
-         self.p.start("bash", ['./autostart_enable'])
-        else:
-         self.p.start("bash", ['./autostart_disable'])
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

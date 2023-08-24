@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+
+
+FILE=~/.config/autostart/artemisos-welcome-app.desktop
+
+
+
+
+if test -f "$FILE"; then
+    rm $FILE
+    python3 /usr/share/artemisos-welcome-app/disable.py
+
+else
+    cp  /usr/share/applications/artemisos-welcome-app.desktop ~/.config/autostart/
+    python3 /usr/share/artemisos-welcome-app/enable.py
+
+fi
+
+pause

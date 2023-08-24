@@ -105,7 +105,7 @@
      <enum>QTabWidget::South</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -213,6 +213,24 @@
        <string>Clear</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="autostart">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>200</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Enable/Disable autostart</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -240,22 +258,11 @@ p, li { white-space: pre-wrap; }
       </property>
      </widget>
     </widget>
-   </widget>
-   <widget class="QCheckBox" name="autostart">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>450</y>
-      <width>84</width>
-      <height>26</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Autostart</string>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
-    </property>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>About</string>
+     </attribute>
+    </widget>
    </widget>
   </widget>
  </widget>
