@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 cd /usr/share/artemisos-welcome-app/
-python3 welcome.py
 python3 dev.py
+python3 welcome.py
+

@@ -20,8 +20,8 @@ class MainUI(QDialog):
     def __init__(self):
         super(MainUI, self).__init__()
         loadUi("dev.ui", self)
-        width = 160
-        height = 130
+        width = 350
+        height = 273
         self.setFixedSize(width, height)
 
 ## Buttons ##
