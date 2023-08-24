@@ -2,8 +2,8 @@
 [Desktop Entry]
 Name=Artemis OS Welcome
 GenericName=Artemis OS Welcome
-X-GNOME-FullName=ArcoLinux Welcome
-Comment=Welcome Application for ArcoLinux Installs
+X-GNOME-FullName=Artemis OS Welcome
+Comment=Welcome Application for Artemis OS
 Exec=/usr/local/bin/artemisos-welcome-app
 Icon=logo-purple.svg
 Terminal=false
